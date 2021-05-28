@@ -4,6 +4,7 @@ const db = require('./db');
 
 const app = express();
 
+const testimonialsRoutes = require('./routes/testimonials.route');
 const concertsRoutes = require('./routes/concerts.routes');
 const seatsRoutes = require('./routes/seats.routes');
 
@@ -11,8 +12,9 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use('/', concertsRoutes);
 
+app.use('/', testimonialsRoutes);
+app.use('/', concertsRoutes);
 app.use('/', seatsRoutes);
 
 app.use((req, res) => {

@@ -32,7 +32,7 @@ router.route('/testimonials').post((req, res) => {
       author,
       text,
     });
-    res.send({message: 'OK'});
+    res.send({message: ' OK'});
   } else {
     res.json({ error: 'some data missing' });
   }
@@ -44,11 +44,11 @@ router.route('/testimonials/:id').put((req, res) => {
   if(result){
     const { author, text} = req.body;
 
-    if(author && text) {
+    if(author && text && id) {
       const indexOfResult = db.testimonials.indexOf(result);
 
       db.testimonials[indexOfResult] = {
-        id: randomId(16),
+        id,
         author,
         text,
       };

@@ -20,7 +20,7 @@ router.route('/concerts/:id').get((req, res) => {
   if(result){
     res.json(result);
   } else {
-    res.json({ error: 'element not founf' });
+    res.json({ error: 'element not found' });
   }
 });
 
@@ -48,11 +48,11 @@ router.route('/concerts/:id').put((req, res) => {
   if(result) {
     const { performer, genre, price, day, image } = req.body;
 
-    if(performer && genre && price && day && image) {
+    if(id && performer && genre && price && day && image) {
       const indexOfResult = db.concerts.indexOf(result);
 
       db.concerts[indexOfResult] = {
-        id: randomID(16),
+        id,
         performer,
         genre,
         price,

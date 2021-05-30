@@ -21,6 +21,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build:fe": "cd client && yarn && yarn build"
   }
 }

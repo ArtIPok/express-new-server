@@ -35,7 +35,7 @@ router.route('/seats').post((req, res) => {
       client,
       email,
     });
-    res.send({ message: 'OK' });
+    res.send({ message: ' OK' });
   } else {
     res.send({ message: 'some data missing' });
   }
@@ -45,13 +45,13 @@ router.route('/seats/:id').put((req, res) => {
   const result = db.seats.find(seats => seats.id === req.params.id);
 
   if(result){
-    const { id, day, seat, client, email } = req.body;
+    const { day, seat, client, email } = req.body;
 
-    if(day && seat && client && email){
+    if(id && day && seat && client && email){
       const indexOfResult = db.seats.indexOf(result);
 
       db.seats[indexOfResult] = {
-        id: randomID(16),
+        id,
         day,
         seat,
         client,

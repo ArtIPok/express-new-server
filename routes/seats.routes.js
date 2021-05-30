@@ -51,7 +51,7 @@ router.route('/seats/:id').put((req, res) => {
       const indexOfResult = db.seats.indexOf(result);
 
       db.seats[indexOfResult] = {
-        id,
+        id: req.params.id,
         day,
         seat,
         client,

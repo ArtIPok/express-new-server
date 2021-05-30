@@ -48,7 +48,7 @@ router.route('/testimonials/:id').put((req, res) => {
       const indexOfResult = db.testimonials.indexOf(result);
 
       db.testimonials[indexOfResult] = {
-        id,
+        id: req.params.id,
         author,
         text,
       };

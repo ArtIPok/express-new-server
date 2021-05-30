@@ -48,11 +48,11 @@ router.route('/concerts/:id').put((req, res) => {
   if(result) {
     const { performer, genre, price, day, image } = req.body;
 
-    if(id && performer && genre && price && day && image) {
+    if(performer && genre && price && day && image) {
       const indexOfResult = db.concerts.indexOf(result);
 
       db.concerts[indexOfResult] = {
-        id,
+        id: req.params.id,
         performer,
         genre,
         price,

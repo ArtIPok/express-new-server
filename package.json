@@ -22,6 +22,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "build:fe": "cd client && yarn && yarn build"
+    "build:fe": "cd client && yarn && yarn build",
+    "build": "react-scripts build"
   }
 }
